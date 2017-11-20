@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Gantee Component</title>
+    <meta name="description" content="Gantee">
+    <link rel="stylesheet" type="text/css" href="/bundle.css" />
+
+    <body>
+        <div id="content"></div>
+        <script type="text/javascript" src="/bundle.js"></script>
+        <script>
+        gantt.default.init({
+            el: "#content",
+            data: [{
+                name: "M1",
+                id: "m1",
+                items: [{
+                    name: "M1-1",
+                    id: "m1_1",
+                    schedules: [{
+                        id: "m1_1_s1",
+                        name: "M1-1 Schedule 1",
+                        dates: ["2017-02-01", "2017-02-05"]
+                    }, {
+                        id: "m1_1_s2",
+                        name: "M1-1 Schedule 2",
+                        dates: ["2017-02-06", "2017-02-09"]
+                    }, {
+                        id: "m1_1_s3",
+                        name: "M1-1 Schedule 3",
+                        dates: ["2017-02-11", "2017-02-21"]
+                    }]
+                }, {
+                    name: "M1-2",
+                    id: "m1_2",
+                    schedules: [{
+                        id: "m1_2_s1",
+                        name: "M1-2 Schedule 1",
+                        dates: ["2017-02-01", "2017-02-11"]
+                    }]
+                }]
+            }, {
+                name: "M2",
+                id: "m2",
+                schedules: [{
+                    id: "m2_s1",
+                    name: "M2 Schedule 1",
+                    dates: ["2017-02-01", "2017-02-05"]
+                }, {
+                    id: "m2_s2",
+                    name: "M2 Schedule 2",
+                    dates: ["2017-02-06", "2017-02-09"]
+                }, {
+                    id: "m2_s3",
+                    name: "M2 Schedule 3",
+                    dates: ["2017-02-11", "2017-02-21"]
+                }]
+            }, {
+                name: "M3",
+                id: "m3",
+                schedules: [{
+                    id: "m3_s1",
+                    name: "M3 Schedule 1",
+                    dates: ["2017-02-06", "2017-06-21"]
+                }]
+            }]
+        })
+        </script>
+    </body>
+
+</html>

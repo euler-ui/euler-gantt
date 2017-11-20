@@ -1,0 +1,219 @@
+.gantt-editor {
+  min-width: 600px;
+  margin: auto;
+  font-family: Times, serif;
+  font-size: 14px;
+}
+
+.gantt-editor * {
+  box-sizing: border-box;
+}
+
+.gantt-editor > .gantt-editor-header {
+  float: left;
+}
+
+.gantt-brand {
+  background: url("assets/images/calendar-clock.svg") no-repeat center;
+}
+
+.gantt-editor-body {
+  margin-left: 60px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  border: 1px solid #ddd;
+}
+
+.gantt-item-headers >.gantt-item-header {
+  position: relative;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+}
+
+.gantt-item-header__title {
+  transform-origin: 0px 0px;
+  text-align: center;
+}
+
+.gantt-editor:after {
+  display: block;
+  clear: both;
+  content: " ";
+}
+
+.gantt-editor-header {
+  font-size: 16px;
+  color: white;
+}
+
+.gantt-item-sub-headers,
+.gantt-item-sub-headers .gantt-item-header:not(:last-child) .gantt-item-header__title {
+  border-left: 1px solid #fff;
+}
+
+.gantt-body-grid {
+  position: relative;
+}
+
+.gantt-item-schedules {
+  position: relative;
+  border-bottom: 1px solid #ddd;
+}
+
+.gantt-item-schedule {
+  position: absolute;
+  color: white;
+  text-align: center;
+}
+
+.gantt-item-schedule-bar {
+  border-radius: 4px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.gantt-item-schedule-bar:hover {
+  opacity: 0.9;
+  cursor: move;
+}
+
+.gantt-item-schedule:hover .gantt-item-schedule-pointer {
+  display: block;
+}
+
+.gantt-item-schedule-resizer-l {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+  z-index: 999;
+  width: 10px;
+  cursor: w-resize;
+  opacity: 0.8;
+}
+
+.gantt-item-schedule-pointer {
+  position: relative;
+  top: 50%;
+  left: 1px;
+  display: none;
+  margin-top: -4px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50px;
+}
+
+.gantt-item-schedule-resizer-r {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  z-index: 999;
+  width: 10px;
+  cursor: e-resize;
+  opacity: 0.8;
+}
+
+.gantt-item-schedules:last-child {
+  border-bottom-style: none;
+}
+
+.gantt-body-calendar {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  color: #707070;
+}
+
+.gantt-calendar-month {
+  position: relative;
+  display: inline-block;
+  float: left;
+  height: 100%;
+}
+
+.gantt-calendar-month__days {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+
+.gantt-calendar-day {
+  float: left;
+  height: 100%;
+  border-right: 1px solid #ddd;
+}
+
+.gantt-calendar-day-weekend {
+  background-color: rgba(221, 221, 221, 0.2);
+}
+
+.gantt-calendar-month__header {
+  text-align: center;
+  font-size: 16px;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+.gantt-calendar-day__header {
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.gantt-calendar-month:last-child .gantt-calendar-day:last-child,
+.gantt-calendar-month:last-child .gantt-calendar-month__header {
+  border-right-style: none;
+}
+
+.gantt-editor-header {
+  border-top: 1px solid #eee;
+  border-left: 1px solid #eee;
+}
+
+.gantt-body-inner {
+  position: relative;
+}
+
+[aria-label]:before,
+[aria-label]:after {
+  opacity: 0;
+  transition: all 0.18s ease-out 0.18s;
+  bottom: 100%;
+  left: 50%;
+  position: absolute;
+  z-index: 10;
+  transform: translate(-50%, 10px);
+  transform-origin: top;
+}
+
+[aria-label]:after {
+  padding: .5em 1em;
+  margin-bottom: 11px;
+  line-height: 15px;
+  color: #fff;
+  font-size: 12px;
+  visibility: hidden;
+  background: rgba(17, 17, 17, 0.9);
+  border-radius: 4px;
+  white-space: pre;
+  content: attr(aria-label);
+}
+
+[aria-label]:before {
+  content: "";
+  border: 6px solid transparent;
+  border-top-color: #383838;
+}
+
+[aria-label]:hover:before,
+[aria-label][aria-label-visible]:before,
+[aria-label]:hover:after,
+[aria-label][aria-label-visible]:after {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+}

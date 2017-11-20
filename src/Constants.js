@@ -1,0 +1,10 @@
+export const GANTT_HEADER_WIDTH = 60;
+export const GANTT_ITEM_HEIGHT = 60;
+export const GANTT_DAY_WIDTH = 24;
+export const GANTT_BODY_BORDER = 1;
+export const GANTT_DAY_HEIGHT = 28;
+export const GANTT_MONTH_HEIGHT = 28;
+export const GANTT_SCHEDULE_MARGIN = 4;
+export const MIN_DATE_ADVANCE = 0;
+export const MAX_DATE_EXTEND = 0;
+export const BRAND_SIZE = 45;
